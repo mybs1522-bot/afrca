@@ -97,6 +97,13 @@ const LandingPage: React.FC = () => {
   }, []);
   useEffect(() => { const h = () => setShowStickyBar(window.scrollY > 600); window.addEventListener('scroll', h, { passive: true }); return () => window.removeEventListener('scroll', h); }, []);
   useEffect(() => { const t = setInterval(() => setStudentCount(c => c + 1), 4000); return () => clearInterval(t); }, []);
+  const [headlineIdx, setHeadlineIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => {
+      setHeadlineIdx(i => (i + 1) % 3);
+    }, 5000);
+    return () => clearInterval(t);
+  }, []);
 
   const formatTime = (val: number) => val.toString().padStart(2, '0');
 
@@ -135,9 +142,23 @@ const LandingPage: React.FC = () => {
               </div>
 
               {/* Main Hook Headline */}
-              <h1 className="mb-4 max-w-2xl">
+              <h1 className="mb-4 max-w-2xl min-h-[3.6rem] md:min-h-[6.5rem]">
                 <span className="block text-2xl leading-[1.2] md:text-5xl md:leading-[1.1] font-display font-extrabold tracking-tight text-white">
-                  Stop Earning Peanuts. Master Modern <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">Interior & Exterior Design</span> In 15 Days.
+                  Stop Earning Peanuts. Master Modern{" "}
+                  <span 
+                    key={headlineIdx}
+                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400"
+                    style={{ animation: 'fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
+                  >
+                    {
+                      [
+                        "Interior & Exterior Design",
+                        "Photorealistic 3D Rendering",
+                        "High-Income Studio Pipelines"
+                      ][headlineIdx]
+                    }
+                  </span>{" "}
+                  In 15 Days.
                 </span>
               </h1>
 
