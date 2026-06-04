@@ -212,9 +212,16 @@ const LandingPage: React.FC = () => {
 
 
         {/* ═══════ COURSE SLIDESHOW — Master Every Tool ═══════ */}
-        <section className="py-8 md:py-16 bg-white border-b border-gray-100 overflow-hidden relative">
+        <section className="py-12 md:py-16 bg-white border-b border-gray-100 overflow-hidden relative text-center">
            <div className="max-w-5xl mx-auto px-4">
-             <img src="/course-pipeline.png" alt="Master the Complete Plan-to-Render Pipeline — 4 Premium Courses Included: AutoCAD Mastery, SketchUp Pro, V-Ray Photorealism, D5 Render AI" className="w-full rounded-2xl" />
+             <h2 className="text-2xl md:text-4xl font-display font-extrabold text-slate-900 tracking-tight mb-8">
+               We Teach 4 Courses You Need For Your Career
+             </h2>
+             <img 
+               src="https://drive.google.com/thumbnail?id=1dmbUPuZb_ioj6CuCszjfAIAQ5I9rllAd&sz=w1600" 
+               alt="We Teach 4 Courses You Need For Your Career: AutoCAD, SketchUp, V-Ray, D5 Render AI" 
+               className="w-full rounded-2xl shadow-lg border border-slate-100" 
+             />
            </div>
         </section>
 
