@@ -142,7 +142,7 @@ const LandingPage: React.FC = () => {
               </div>
 
               {/* Main Hook Headline */}
-              <h1 className="mb-4 max-w-3xl min-h-[5.5rem] md:min-h-[9rem] flex items-center justify-center">
+              <h1 className="mb-4 max-w-3xl min-h-[6.5rem] md:min-h-[9.5rem] flex items-center justify-center">
                 <span 
                   key={headlineIdx}
                   className="block text-xl leading-[1.3] md:text-5xl md:leading-[1.15] font-display font-extrabold tracking-tight text-white"
@@ -150,29 +150,29 @@ const LandingPage: React.FC = () => {
                 >
                   {headlineIdx === 0 && (
                     <>
-                      Stop Earning Peanuts. Master Modern{" "}
+                      Naira is crashing. Master modern{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         Interior & Exterior Design
                       </span>{" "}
-                      In 15 Days.
+                      and lock in ₦500,000+ contracts.
                     </>
                   )}
                   {headlineIdx === 1 && (
                     <>
-                      Stop Wasting Data. Unlock Elite{" "}
+                      Your degree won't pay Lekki rent. Master premium{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         Photorealistic 3D Rendering
                       </span>{" "}
-                      In 15 Days.
+                      and charge developers ₦150k per view.
                     </>
                   )}
                   {headlineIdx === 2 && (
                     <>
-                      Stop Losing Projects. Scale{" "}
+                      Stop begging cheap clients for scraps. Build elite{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         High-Income Studio Pipelines
                       </span>{" "}
-                      In 15 Days.
+                      and secure ₦300k upfront fees.
                     </>
                   )}
                 </span>
