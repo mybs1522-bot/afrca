@@ -225,23 +225,23 @@ const LandingPage: React.FC = () => {
               {/* Outcome strip */}
               <div className="w-full mb-8 grid grid-cols-2 gap-3">
                 <div className="bg-white border border-slate-200 rounded-2xl px-4 py-4 text-left shadow-sm">
-                  <p className="text-[15px] font-bold text-slate-900 mb-1">💰 Start Earning Faster</p>
-                  <p className="text-[12px] text-slate-600 leading-relaxed">Design real projects & charge clients within weeks</p>
+                  <p className="text-[15px] font-bold text-slate-900 mb-1">💰 Charge Premium Fees</p>
+                  <p className="text-[12px] text-slate-600 leading-relaxed">Wealthy Lekki & Abuja developers won't look at cheap sketches. Renders close contracts instantly.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-2xl px-4 py-4 text-left shadow-sm">
-                  <p className="text-[15px] font-bold text-slate-900 mb-1">🏢 Design Full Projects</p>
-                  <p className="text-[12px] text-slate-600 leading-relaxed">Homes, villas, offices — from floor plan to final visual</p>
+                  <p className="text-[15px] font-bold text-slate-900 mb-1">🏢 Interior & Exterior Mastery</p>
+                  <p className="text-[12px] text-slate-600 leading-relaxed">Master both floor plans, detailed interior carpentry, and massive exterior villas.</p>
                 </div>
               </div>
 
               {/* Why different */}
               <div className="w-full bg-orange-50/60 border border-orange-200/70 rounded-2xl px-5 py-5 text-left">
-                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-orange-500 mb-4">✨ Why This Bundle Is Different</p>
+                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-orange-500 mb-4">🔥 The Ultimate Fast-Track Blueprint</p>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Learn to design complete homes, villas & offices end-to-end</li>
-                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> 4 tools that form one seamless pipeline: Plan → Design → Render → Deliver</li>
-                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Start taking on paid projects even while you're still learning</li>
-                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Go from zero to your first paying client in 15 days</li>
+                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Learn the standard 3D plan-to-render pipeline standard in luxury design agencies</li>
+                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> AutoCAD + SketchUp + V-Ray + D5 Render AI: Master all 4 in one package</li>
+                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Earn while you study: We give you real client briefs and pay you cash directly</li>
+                  <li className="flex items-start gap-3 text-[14px] md:text-[15px] text-slate-800 leading-[1.6]"><span className="text-orange-500 shrink-0 mt-0.5 font-bold">—</span> Stop collecting useless certificates. Build a portfolio that commands wealth.</li>
                 </ul>
               </div>
           </div>
@@ -432,30 +432,30 @@ const LandingPage: React.FC = () => {
         <section className="py-16 md:py-28 grid-bg bg-white border-b border-slate-200">
           <div className="max-w-3xl mx-auto px-5">
             <div className="reveal text-center mb-12">
-              <p className="text-orange-500 text-xs font-mono uppercase tracking-widest mb-4">A Supportive Message from Our Team</p>
-              <h2 className="text-3xl md:text-5xl font-serif italic text-slate-900 mb-8 leading-snug">"We believe every designer deserves restaurant-quality tools at street-food prices."</h2>
+              <p className="text-orange-500 text-xs font-mono uppercase tracking-widest mb-4">A Brutally Honest Truth About Design Careers in Nigeria</p>
+              <h2 className="text-3xl md:text-5xl font-serif italic text-slate-900 mb-8 leading-snug">"A university degree won't pay your bills. High-end practical skills will."</h2>
             </div>
             <div className="reveal space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-              <p>Learning SketchUp, V-Ray, and D5 Render separately? That's <strong className="text-slate-900">{country.expensiveCourses} in courses, months of confusion, and a dozen browser tabs</strong> you'll never close.</p>
-              <p>We built this bundle because <strong className="text-orange-600">the design pipeline shouldn't be gatekept</strong>. Whether you're a student, a freelancer, or a studio owner — you deserve a clear, guided path from 2D blueprint to photorealistic render.</p>
-              <p>Every lesson is designed so you build <strong className="text-slate-900">real projects</strong>. Not theory. Not fluff. Actual rooms, actual renders, actual portfolio pieces.</p>
+              <p>Let's face the truth: In today's economy, nobody cares about your theoretical certificates. Clients in Lekki, Abuja, and foreign developers want one thing: **Stunning, photorealistic visuals that prove you can build their dream homes.**</p>
+              <p>If you cannot produce professional drawings and renders, you are forced to compete on low prices, taking home peanuts. Meanwhile, designers using the **AutoCAD → SketchUp → V-Ray & D5 Render AI** pipeline easily charge **{country.renderCharge} to {country.projectRange}** per design and deliver in 48 hours.</p>
+              <p>We built this bundle because we are tired of seeing young talents spend **{country.expensiveCourses}** on useless physical academies only to learn outdated tools. We teach you a complete, commercial workflow that is ready to launch you straight into premium freelance or studio employment.</p>
               
-              <div className="my-10 bg-gradient-to-br from-orange-50 to-orange-50 border border-orange-200 rounded-2xl p-6 md:p-8 shadow-soft">
-                <p className="font-bold text-slate-900 text-xl mb-4">Here's What Makes This Bundle Special:</p>
+              <div className="my-10 bg-gradient-to-br from-orange-50 to-orange-50/50 border border-orange-200 rounded-2xl p-6 md:p-8 shadow-soft">
+                <p className="font-bold text-slate-900 text-xl mb-4">What Makes This Bundle Your Financial Shortcut:</p>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>AutoCAD</strong> — Draw accurate 2D floor plans and blueprints from scratch.</span></li>
-                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>SketchUp</strong> — Design stunning 3D models from scratch, even if you've never opened the software.</span></li>
-                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>V-Ray</strong> — Turn those models into magazine-quality photorealistic images.</span></li>
-                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>D5 Render AI</strong> — Real-time AI rendering: see changes instantly, generate 4K images in seconds.</span></li>
-                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800">24/7 support, free software links, and a community that's always got your back.</span></li>
+                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>AutoCAD</strong> — Draw construction-ready 2D blueprints that contractors can actually follow.</span></li>
+                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>SketchUp</strong> — Model complex 3D interiors and villa structures step-by-step.</span></li>
+                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>V-Ray</strong> — Master professional camera setups, materials, and photorealistic lighting.</span></li>
+                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800"><strong>D5 Render AI</strong> — Real-time rendering: see changes live and generate video walkthroughs in seconds.</span></li>
+                  <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800">24/7 expert mentorship, free software setups, and premium asset libraries included.</span></li>
                 </ul>
                 <div className="mt-6 pt-6 border-t border-orange-100 flex items-center justify-between">
-                  <span className="text-slate-600 text-sm italic font-bold">The complete design-to-render ecosystem for just {country.formattedPrice}.</span>
-                  <button onClick={openPaymentModal} className="text-orange-600 font-bold text-sm hover:text-orange-600 flex items-center gap-1 group">Get Started <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></button>
+                  <span className="text-slate-600 text-sm italic font-bold">Secure lifetime access to the entire design ecosystem for just {country.formattedPrice}.</span>
+                  <button onClick={openPaymentModal} className="text-orange-600 font-bold text-sm hover:text-orange-700 flex items-center gap-1 group">Claim This Deal <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></button>
                 </div>
               </div>
 
-              <p className="text-slate-900 font-semibold text-lg md:text-xl border-l-4 border-orange-500 pl-4 bg-orange-50 p-4 rounded-r-xl">Stop collecting bookmarks. Start building a portfolio. 50,000+ students already did — and they started with the same {country.formattedPrice} decision you're about to make.</p>
+              <p className="text-slate-900 font-semibold text-lg md:text-xl border-l-4 border-orange-500 pl-4 bg-orange-50 p-4 rounded-r-xl">Stop wasting your time on random tutorials. Start building an elite portfolio. 50,000+ students have already taken this shortcut — and it started with the same {country.formattedPrice} decision you are looking at right now.</p>
             </div>
           </div>
         </section>
@@ -464,7 +464,7 @@ const LandingPage: React.FC = () => {
         {/* 5. OLD vs NEW — The Contrast */}
         <section className="py-16 md:py-24 bg-white grid-bg">
           <div className="max-w-5xl mx-auto px-5">
-            <div className="reveal text-center mb-12"><h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-4">The Slow, Expensive Path <br className="hidden md:block" />vs. <span className="text-orange-600">Our {country.formattedPrice} Shortcut</span></h2></div>
+            <div className="reveal text-center mb-12"><h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-4">The Slow, Frustrating Path <br className="hidden md:block" />vs. <span className="text-orange-600">Your {country.formattedPrice} Blueprint Shortcut</span></h2></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="reveal grid-bg border border-red-200 rounded-2xl p-8 shadow-soft">
                 <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center"><X size={20} className="text-red-500" /></div><h3 className="text-xl font-bold text-red-500">The Old Struggle</h3></div>
@@ -472,15 +472,27 @@ const LandingPage: React.FC = () => {
                   {PROBLEM_POINTS.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-600 text-sm"><span className="mt-1 shrink-0 text-base">{item.emoji}</span>{item.text}</li>
                   ))}
-                  {['Searching random YouTube tutorials that leave you confused and frustrated', 'Paying expensive monthly subscriptions for software you barely know how to use', 'Graduating from college but lacking a truly stunning portfolio to get hired'].map((item, i) => (
+                  {[
+                    'Wasting costly mobile data watching fragmented tutorials with zero step-by-step logic',
+                    'Getting virus warnings or paying massive subscription fees to get AutoCAD and SketchUp working',
+                    'Wasting 5 years in college but graduating without a single modern render to show top design studios',
+                    'Being forced to beg clients for small payments because your 2D sketches do not look premium'
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-600 text-sm"><X size={14} className="text-red-500 mt-1 shrink-0" />{item}</li>
                   ))}
                 </ul>
               </div>
               <div className="reveal bg-gradient-to-br from-orange-50 to-slate-50 border border-orange-200 rounded-2xl p-8 shadow-soft">
-                <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center"><CheckCircle size={20} className="text-orange-600" /></div><h3 className="text-xl font-bold text-slate-900">The {country.formattedPrice} Bundle</h3></div>
+                <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center"><CheckCircle size={20} className="text-orange-600" /></div><h3 className="text-xl font-bold text-slate-900">The {country.formattedPrice} Shortcut</h3></div>
                 <ul className="space-y-4">
-                  {['AutoCAD: Professional 2D floor plans & blueprints in minutes', 'SketchUp: Build 3D models from floor plans in minutes', 'V-Ray: One-click photorealistic lighting, materials & shadows', 'D5 Render AI: Real-time renders — see it as you design it', 'All software links provided — no expensive licenses needed', '24/7 team support — stuck on a render? We fix it with you'].map((item, i) => (
+                  {[
+                    'AutoCAD: Draft professional 2D floor plans & site layouts from scratch in minutes',
+                    'SketchUp: Build beautiful, clean 3D structure models of homes, offices, and villas',
+                    'V-Ray & D5 Render AI: Produce magazine-ready photorealistic renders and fly-throughs',
+                    'Safe pre-activated software setup files included (zero extra license costs)',
+                    '24/7 Expert WhatsApp support: Get your rendering crashes resolved by mentors in real-time',
+                    `Guaranteed ${country.freelanceTotal} in freelance projects to recover your investment 13x over`
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-700 text-sm"><CheckCircle size={14} className="text-orange-500 mt-1 shrink-0" />{item}</li>
                   ))}
                 </ul>
