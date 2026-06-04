@@ -116,124 +116,94 @@ const LandingPage: React.FC = () => {
 
       <main>
         {/* 1. HERO — The Primary Pitch */}
-        <section className="relative pb-10 md:pb-20 overflow-hidden bg-white">
-          <div className="max-w-2xl mx-auto px-5 md:px-6">
+        <section className="relative pb-12 md:pb-24 overflow-hidden bg-slate-950 text-white border-b border-slate-900">
+          {/* Decorative background gradients */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.15),transparent_50%)] pointer-events-none" />
+          <div className="absolute top-[20%] left-[-10%] w-[40%] aspect-square bg-[radial-gradient(circle,rgba(249,115,22,0.05),transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-[10%] right-[-10%] w-[40%] aspect-square bg-[radial-gradient(circle,rgba(249,115,22,0.05),transparent_70%)] pointer-events-none" />
+
+          <div className="max-w-3xl mx-auto px-5 md:px-6 relative z-10">
             <div className="flex flex-col items-center text-center pt-10 md:pt-20">
 
               {/* Badge */}
-              <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-5 py-2 bg-orange-50/80 border border-orange-200 rounded-full whitespace-nowrap">
-                <Sparkles size={13} className="text-orange-400 shrink-0" />
-                <span className="text-[10px] md:text-xs font-semibold text-orange-600 uppercase tracking-[0.15em]">Hello, Interior Designers and Architects</span>
+              <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-full select-none">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                </span>
+                <span className="text-[10px] md:text-xs font-bold text-orange-400 uppercase tracking-[0.15em]">{country.flag} #1 Design & Render Blueprint in {country.name}</span>
               </div>
 
-              {/* Industry truth */}
-              <p className="w-full text-[10px] md:text-[13px] font-semibold uppercase tracking-[0.14em] text-slate-600 mb-5 md:mb-6 leading-[1.9]">
-                In our business of Architecture and Design, <span className="text-orange-500 font-bold">Planning, Design and Rendering</span> matter the most.
-              </p>
-
-              {/* Main headline */}
-              <h1 className="mb-3 md:mb-4">
-                <span className="block text-[1.4rem] leading-[1.25] md:text-[2.75rem] md:leading-[1.15] font-display font-extrabold text-slate-900 tracking-tight whitespace-nowrap">
-                  We Will Teach You to Create Complete
+              {/* Main Hook Headline */}
+              <h1 className="mb-4 max-w-2xl">
+                <span className="block text-2xl leading-[1.2] md:text-5xl md:leading-[1.1] font-display font-extrabold tracking-tight text-white">
+                  Stop Earning Peanuts. Master Modern <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">Interior & Exterior Design</span> In 15 Days.
                 </span>
               </h1>
 
-              {/* Category items with images */}
-              <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-3 md:mb-5">
-                <div className="flex items-center gap-1.5">
-                  <img src="https://archicgi.com/wp-content/uploads/2025/01/bedroom-design-3d-render-vancouver.jpg" alt="Bedroom" className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-orange-200" />
-                  <span className="text-[13px] md:text-base font-bold text-slate-800">Bedroom</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxhTeQpiWXZ5sqNSpfTLtZgqfVLCg8DxWZg&s" alt="Kitchen" className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-orange-200" />
-                  <span className="text-[13px] md:text-base font-bold text-slate-800">Kitchen</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <img src="https://t4.ftcdn.net/jpg/05/39/76/47/360_F_539764753_ssmO3LitGNsiX5X1c14XWp2qYxNhgAGo.jpg" alt="Washroom" className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-orange-200" />
-                  <span className="text-[13px] md:text-base font-bold text-slate-800">Washrooms</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <img src="https://mirchidevelopers.com/wp-content/uploads/2025/09/1.webp" alt="Villa" className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-orange-200" />
-                  <span className="text-[13px] md:text-base font-bold text-slate-800">Villas</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <img src="https://render-vision.com/wp-content/uploads/2024/09/3D-Visualisierung_Buro_final-1920x1280.jpg.webp" alt="Office" className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-orange-200" />
-                  <span className="text-[13px] md:text-base font-bold text-slate-800">Offices</span>
-                </div>
-              </div>
-              <p className="text-[15px] md:text-[1.35rem] leading-relaxed font-semibold text-slate-600 mb-1 md:mb-2 whitespace-nowrap">
-                So You can Start Earning as a Professional Designer
-              </p>
-              <p className="mb-5 md:mb-10">
-                <span className="inline-block bg-orange-500 text-white font-bold text-[14px] md:text-lg px-4 py-1.5 rounded-lg">in Just 15 days</span>
+              {/* Income Subheadline */}
+              <p className="text-lg md:text-2xl font-bold text-slate-200 mb-6 font-display tracking-tight">
+                Charge <span className="text-orange-400 underline underline-offset-4 decoration-orange-500 font-extrabold">{country.renderCharge} to {country.projectRange}</span> Per Client Design
               </p>
 
-              {/* Pipeline note */}
-              <div className="w-full max-w-lg mx-auto bg-slate-50/80 border border-slate-200/80 rounded-2xl px-5 py-4 mb-8 md:mb-10">
-                <p className="text-[11px] md:text-xs font-semibold text-slate-500 uppercase tracking-[0.15em] mb-2">We teach you</p>
-                <p className="text-[14px] md:text-[16px] text-slate-700 leading-[1.7]">
-                  <strong className="text-slate-900 font-bold">Planning</strong> on AutoCAD, <strong className="text-slate-900 font-bold">Designing</strong> on SketchUp<br className="md:hidden" />and <strong className="text-slate-900 font-bold">Rendering</strong> on V-Ray and D5 + AI
-                </p>
+              {/* Zero-friction Info Badges */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mb-8 md:mb-10 text-left">
+                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 flex items-center gap-3">
+                  <span className="text-2xl">💰</span>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-wider">Earn While Learning</p>
+                    <p className="text-[11px] text-slate-400">Includes {country.freelanceTotal} in guaranteed projects</p>
+                  </div>
+                </div>
+                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 flex items-center gap-3">
+                  <span className="text-2xl">💻</span>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-wider">No Setup Fees</p>
+                    <p className="text-[11px] text-slate-400">Free student & AI software links included</p>
+                  </div>
+                </div>
+                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 flex items-center gap-3">
+                  <span className="text-2xl">🎓</span>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-wider">Zero Experience Required</p>
+                    <p className="text-[11px] text-slate-400">We start from absolute scratch</p>
+                  </div>
+                </div>
               </div>
 
               {/* Hero Video */}
-              <div className="w-full mb-10 md:mb-12 overflow-hidden rounded-2xl shadow-lg border border-slate-100" style={{ position: 'relative', paddingTop: '56.25%' }}>
+              <div className="w-full mb-10 md:mb-12 overflow-hidden rounded-2xl shadow-[0_0_50px_rgba(249,115,22,0.15)] border-2 border-orange-500/20" style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe src="https://iframe.mediadelivery.net/embed/494628/81badf78-a3b0-42fa-9f23-9f7213d4185c?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)', padding: '2.5rem 1.25rem 1.25rem', pointerEvents: 'none', zIndex: 10 }}>
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.4) 60%, transparent 100%)', padding: '2.5rem 1.25rem 1.25rem', pointerEvents: 'none', zIndex: 10 }}>
                   <p style={{ color: '#fff', fontSize: 'clamp(0.85rem, 2.5vw, 1.25rem)', fontWeight: 700, textAlign: 'center', margin: 0, textShadow: '0 2px 8px rgba(0,0,0,0.5)', letterSpacing: '0.01em', lineHeight: 1.4 }}>
-                    Learn Complete Interior & Exterior Design in one package.
+                    AutoCAD (Planning) + SketchUp (3D Models) + V-Ray & D5 Render AI (Photorealism)
                   </p>
                 </div>
               </div>
 
-              {/* Career hook */}
-              <div className="max-w-lg mx-auto mb-10 md:mb-12 text-center">
-                <p className="text-xl leading-[1.4] md:text-[1.6rem] md:leading-[1.35] font-bold text-slate-900 tracking-tight mb-1">
-                  Design like Top Designers in <span className="text-orange-500 underline underline-offset-4 italic">15 Days.</span>
-                </p>
-                <p className="text-sm md:text-base font-semibold text-slate-400 uppercase tracking-widest mb-6">
-                  No Bullshit.
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-left">
-                    <p className="text-[14px] md:text-[15px] font-bold text-slate-900 mb-0.5">💼 Land Higher-Paying Jobs</p>
-                    <p className="text-[11px] md:text-xs text-slate-500">Firms pay premium for rendering skills</p>
-                  </div>
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-left">
-                    <p className="text-[14px] md:text-[15px] font-bold text-slate-900 mb-0.5">🏢 Start Your Own Studio</p>
-                    <p className="text-[11px] md:text-xs text-slate-500">Full pipeline for freelance & studio work</p>
-                  </div>
+              {/* Call To Action */}
+              <div className="w-full max-w-md mx-auto">
+                <button 
+                  onClick={openPaymentModal} 
+                  className="w-full px-8 py-[18px] bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-500 text-white rounded-xl font-bold text-lg md:text-xl shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 group premium-stroke"
+                >
+                  Get Instant Access — {country.formattedPrice} <ArrowRight className="group-hover:translate-x-1 transition-transform duration-200" size={20} />
+                </button>
+                
+                <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-xs text-slate-400 font-medium">
+                  <span className="flex items-center gap-1"><ShieldCheck size={14} className="text-orange-500" /> 7-Day Money-Back Guarantee</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span className="flex items-center gap-1"><Check size={14} className="text-orange-500" /> Lifetime Updates</span>
                 </div>
               </div>
 
-              {/* Zero-knowledge note */}
-              <div className="w-full max-w-lg mx-auto mb-8 md:mb-10 flex items-start gap-4 bg-slate-50/70 border border-slate-200/70 rounded-2xl px-5 py-5 text-left">
-                <span className="text-2xl shrink-0 mt-0.5">💻</span>
-                <div>
-                  <p className="text-[15px] font-bold text-slate-900 mb-1 tracking-tight">No prior knowledge needed. Zero.</p>
-                  <p className="text-[13px] md:text-sm text-slate-600 leading-[1.7]">
-                    Never designed a home before? That's totally fine — we start from scratch. All you need is a <strong className="text-slate-700 font-semibold">laptop or PC</strong> and we'll take care of the rest.
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <button onClick={openPaymentModal} className="w-full md:w-auto px-12 py-[18px] bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg md:text-xl shadow-lg shadow-orange-500/15 hover:shadow-orange-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 group">
-                Enroll Now — {country.formattedPrice} <ArrowRight className="group-hover:translate-x-1 transition-transform duration-200" size={20} />
-              </button>
-              <p className="text-[12px] text-slate-500 mt-4 font-medium tracking-wide">Instant access · Lifetime updates · No prior knowledge needed</p>
-
-              {/* Students worldwide image */}
-              <div className="w-full mt-10 md:mt-12 mb-3">
-                <p className="text-[11px] md:text-xs font-semibold text-slate-600 uppercase tracking-[0.15em] mb-4">50,000+ students worldwide</p>
-                <img src="https://lh3.googleusercontent.com/d/1U5Yisfd31i6-OFBRVorAjhO5O0S72JzG" alt="50,000+ students learning on Zoom — worldwide community" className="w-full rounded-2xl border border-slate-100 shadow-sm" />
-              </div>
-
-              {/* Social proof bar */}
-              <div className="w-full mt-6 flex flex-wrap items-center justify-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-4 py-2 text-[12px] font-semibold text-slate-700 shadow-sm">⭐ 4.9/5 from 50,000+ students</span>
-                <span className="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-4 py-2 text-[12px] font-semibold text-slate-700 shadow-sm">🎓 Used by designers in 18+ countries</span>
-                <span className="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-4 py-2 text-[12px] font-semibold text-slate-700 shadow-sm">✅ 7-day money-back guarantee</span>
+              {/* Social Proof Stats */}
+              <div className="w-full mt-10 pt-8 border-t border-slate-900 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+                <span className="flex items-center gap-1.5"><Star size={13} className="fill-orange-400 text-orange-400" /> 4.9/5 from 50,000+ Students</span>
+                <span className="hidden md:inline">•</span>
+                <span className="flex items-center gap-1.5">🎓 Active Designers in 18+ Countries</span>
+                <span className="hidden md:inline">•</span>
+                <span className="flex items-center gap-1.5">🔥 Special Offer Discount Applied</span>
               </div>
 
             </div>
