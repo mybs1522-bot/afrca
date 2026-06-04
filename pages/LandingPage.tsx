@@ -142,28 +142,44 @@ const LandingPage: React.FC = () => {
               </div>
 
               {/* Main Hook Headline */}
-              <h1 className="mb-4 max-w-2xl min-h-[3.6rem] md:min-h-[6.5rem]">
-                <span className="block text-2xl leading-[1.2] md:text-5xl md:leading-[1.1] font-display font-extrabold tracking-tight text-white">
-                  Stop Earning Peanuts. Master Modern{" "}
-                  <span 
-                    key={headlineIdx}
-                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400"
-                    style={{ animation: 'fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
-                  >
-                    {
-                      [
-                        "Interior & Exterior Design",
-                        "Photorealistic 3D Rendering",
-                        "High-Income Studio Pipelines"
-                      ][headlineIdx]
-                    }
-                  </span>{" "}
-                  In 15 Days.
+              <h1 className="mb-4 max-w-3xl min-h-[5.5rem] md:min-h-[9rem] flex items-center justify-center">
+                <span 
+                  key={headlineIdx}
+                  className="block text-xl leading-[1.3] md:text-5xl md:leading-[1.15] font-display font-extrabold tracking-tight text-white"
+                  style={{ animation: 'fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
+                >
+                  {headlineIdx === 0 && (
+                    <>
+                      Stop Earning Peanuts. Master Modern{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
+                        Interior & Exterior Design
+                      </span>{" "}
+                      In 15 Days.
+                    </>
+                  )}
+                  {headlineIdx === 1 && (
+                    <>
+                      Stop Wasting Data. Unlock Elite{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
+                        Photorealistic 3D Rendering
+                      </span>{" "}
+                      In 15 Days.
+                    </>
+                  )}
+                  {headlineIdx === 2 && (
+                    <>
+                      Stop Losing Projects. Scale{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
+                        High-Income Studio Pipelines
+                      </span>{" "}
+                      In 15 Days.
+                    </>
+                  )}
                 </span>
               </h1>
 
               {/* Income Subheadline */}
-              <p className="text-lg md:text-2xl font-bold text-slate-200 mb-6 font-display tracking-tight">
+              <p className="text-[11px] min-[360px]:text-sm sm:text-lg md:text-2xl font-bold text-slate-200 mb-6 font-display tracking-tight whitespace-nowrap overflow-x-visible">
                 Charge <span className="text-orange-400 underline underline-offset-4 decoration-orange-500 font-extrabold">{country.renderCharge} to {country.projectRange}</span> Per Client Design
               </p>
 
