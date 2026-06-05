@@ -31,6 +31,13 @@ export interface CountryConfig {
   ecosystemPrice: string;
   // Banner text
   bannerText: string;
+  // Localized hero/marketing copy
+  heroCurrencyHook: string;
+  premiumRentArea: string;
+  premiumAreas: string;
+  heroContract: string;
+  heroRenderFee: string;
+  heroUpfront: string;
   // Social proof toast cities
   cities: { name: string; city: string }[];
 }
@@ -62,6 +69,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: '₦500,000+',
     ecosystemPrice: '₦15,000',
     bannerText: '🇳🇬 Now Available In Nigeria',
+    heroCurrencyHook: 'Naira is crashing',
+    premiumRentArea: 'Lekki',
+    premiumAreas: 'Lekki & Abuja',
+    heroContract: '₦500,000+',
+    heroRenderFee: '₦150k',
+    heroUpfront: '₦300k',
     cities: [
       { name: "Chinedu O.", city: "Lagos" },
       { name: "Adaeze N.", city: "Abuja" },
@@ -101,6 +114,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: 'GH₵5,000+',
     ecosystemPrice: 'GH₵150',
     bannerText: '🇬🇭 Now Available In Ghana',
+    heroCurrencyHook: 'Cedi keeps falling',
+    premiumRentArea: 'East Legon',
+    premiumAreas: 'East Legon & Airport City',
+    heroContract: 'GH₵50,000+',
+    heroRenderFee: 'GH₵1,500',
+    heroUpfront: 'GH₵3,000',
     cities: [
       { name: "Kwame A.", city: "Accra" },
       { name: "Ama S.", city: "Kumasi" },
@@ -140,6 +159,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: 'KSh 50,000+',
     ecosystemPrice: 'KSh 1,500',
     bannerText: '🇰🇪 Now Available In Kenya',
+    heroCurrencyHook: 'Cost of living is rising',
+    premiumRentArea: 'Karen',
+    premiumAreas: 'Karen & Westlands',
+    heroContract: 'KSh 500,000+',
+    heroRenderFee: 'KSh 15k',
+    heroUpfront: 'KSh 30k',
     cities: [
       { name: "James W.", city: "Nairobi" },
       { name: "Faith M.", city: "Mombasa" },
@@ -179,6 +204,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: 'TSh 1,000,000+',
     ecosystemPrice: 'TSh 30,000',
     bannerText: '🇹🇿 Now Available In Tanzania',
+    heroCurrencyHook: 'Prices keep climbing',
+    premiumRentArea: 'Masaki',
+    premiumAreas: 'Masaki & Oyster Bay',
+    heroContract: 'TSh 5,000,000+',
+    heroRenderFee: 'TSh 150k',
+    heroUpfront: 'TSh 300k',
     cities: [
       { name: "Joseph M.", city: "Dar es Salaam" },
       { name: "Neema J.", city: "Arusha" },
@@ -218,6 +249,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: 'USh 1,300,000+',
     ecosystemPrice: 'USh 40,000',
     bannerText: '🇺🇬 Now Available In Uganda',
+    heroCurrencyHook: 'Shilling keeps sliding',
+    premiumRentArea: 'Kololo',
+    premiumAreas: 'Kololo & Naguru',
+    heroContract: 'USh 5,000,000+',
+    heroRenderFee: 'USh 150k',
+    heroUpfront: 'USh 300k',
     cities: [
       { name: "Ronald K.", city: "Kampala" },
       { name: "Patricia N.", city: "Entebbe" },
@@ -257,6 +294,12 @@ export const COUNTRIES: Record<string, CountryConfig> = {
     expensiveCourses: 'R10,000+',
     ecosystemPrice: 'R300',
     bannerText: '🇿🇦 Now Available In South Africa',
+    heroCurrencyHook: 'Rand keeps weakening',
+    premiumRentArea: 'Sandton',
+    premiumAreas: 'Sandton & Camps Bay',
+    heroContract: 'R50,000+',
+    heroRenderFee: 'R1,500',
+    heroUpfront: 'R3,000',
     cities: [
       { name: "Thabo M.", city: "Johannesburg" },
       { name: "Naledi S.", city: "Cape Town" },

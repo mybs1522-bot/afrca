@@ -7,7 +7,7 @@ import { useCountry } from '../lib/CountryContext';
 import { getDiscountPercent } from '../lib/countryConfig';
 import {
   SocialProofToast,
-  PROBLEM_POINTS, getTransformationStories, FEAR_STATS,
+  getProblemPoints, getTransformationStories, getFearStats,
   getValueStackItems, getTestimonialsLanding, getFaqItemsLanding, getIncomeTiers,
   COURSES_LANDING, PAGE_PREVIEWS_ROW1, PAGE_PREVIEWS_ROW2
 } from './LandingHelpers';
@@ -150,20 +150,20 @@ const LandingPage: React.FC = () => {
                 >
                   {headlineIdx === 0 && (
                     <>
-                      Naira is crashing. Master modern{" "}
+                      {country.heroCurrencyHook}. Master modern{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         Interior & Exterior Design
                       </span>{" "}
-                      and lock in ₦500,000+ contracts.
+                      and lock in {country.heroContract} contracts.
                     </>
                   )}
                   {headlineIdx === 1 && (
                     <>
-                      Your degree won't pay Lekki rent. Master premium{" "}
+                      Your degree won't pay {country.premiumRentArea} rent. Master premium{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         Photorealistic 3D Rendering
                       </span>{" "}
-                      and charge developers ₦150k per view.
+                      and charge developers {country.heroRenderFee} per view.
                     </>
                   )}
                   {headlineIdx === 2 && (
@@ -172,7 +172,7 @@ const LandingPage: React.FC = () => {
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">
                         High-Income Studio Pipelines
                       </span>{" "}
-                      and secure ₦300k upfront fees.
+                      and secure {country.heroUpfront} upfront fees.
                     </>
                   )}
                 </span>
@@ -270,7 +270,7 @@ const LandingPage: React.FC = () => {
               <div className="w-full mb-8 grid grid-cols-2 gap-3">
                 <div className="bg-white border border-slate-200 rounded-2xl px-4 py-4 text-left shadow-sm">
                   <p className="text-[15px] font-bold text-slate-900 mb-1">💰 Charge Premium Fees</p>
-                  <p className="text-[12px] text-slate-600 leading-relaxed">Wealthy Lekki & Abuja developers won't look at cheap sketches. Renders close contracts instantly.</p>
+                  <p className="text-[12px] text-slate-600 leading-relaxed">Wealthy {country.premiumAreas} developers won't look at cheap sketches. Renders close contracts instantly.</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-2xl px-4 py-4 text-left shadow-sm">
                   <p className="text-[15px] font-bold text-slate-900 mb-1">🏢 Interior & Exterior Mastery</p>
@@ -459,7 +459,7 @@ const LandingPage: React.FC = () => {
         {/* 2. PROOF STATS */}
         <section className="py-10 bg-slate-50 border-y border-slate-200 grid-bg">
           <div className="max-w-5xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {FEAR_STATS.map((s, i) => (
+            {getFearStats(country).map((s, i) => (
               <div key={i} className="text-center reveal">
                 <span className="text-2xl mb-2 block">{s.icon}</span>
                 <span className="text-3xl md:text-4xl font-display font-black text-orange-500">{s.stat}</span>
@@ -476,11 +476,11 @@ const LandingPage: React.FC = () => {
         <section className="py-16 md:py-28 grid-bg bg-white border-b border-slate-200">
           <div className="max-w-3xl mx-auto px-5">
             <div className="reveal text-center mb-12">
-              <p className="text-orange-500 text-xs font-mono uppercase tracking-widest mb-4">A Brutally Honest Truth About Design Careers in Nigeria</p>
+              <p className="text-orange-500 text-xs font-mono uppercase tracking-widest mb-4">A Brutally Honest Truth About Design Careers in {country.name}</p>
               <h2 className="text-3xl md:text-5xl font-serif italic text-slate-900 mb-8 leading-snug">"A university degree won't pay your bills. High-end practical skills will."</h2>
             </div>
             <div className="reveal space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-              <p>Let's face the truth: In today's economy, nobody cares about your theoretical certificates. Clients in Lekki, Abuja, and foreign developers want one thing: **Stunning, photorealistic visuals that prove you can build their dream homes.**</p>
+              <p>Let's face the truth: In today's economy, nobody cares about your theoretical certificates. Premium clients in {country.premiumAreas} and foreign developers want one thing: **Stunning, photorealistic visuals that prove you can build their dream homes.**</p>
               <p>If you cannot produce professional drawings and renders, you are forced to compete on low prices, taking home peanuts. Meanwhile, designers using the **AutoCAD → SketchUp → V-Ray & D5 Render AI** pipeline easily charge **{country.renderCharge} to {country.projectRange}** per design and deliver in 48 hours.</p>
               <p>We built this bundle because we are tired of seeing young talents spend **{country.expensiveCourses}** on useless physical academies only to learn outdated tools. We teach you a complete, commercial workflow that is ready to launch you straight into premium freelance or studio employment.</p>
               
@@ -513,7 +513,7 @@ const LandingPage: React.FC = () => {
               <div className="reveal grid-bg border border-red-200 rounded-2xl p-8 shadow-soft">
                 <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center"><X size={20} className="text-red-500" /></div><h3 className="text-xl font-bold text-red-500">The Old Struggle</h3></div>
                 <ul className="space-y-4">
-                  {PROBLEM_POINTS.map((item, i) => (
+                  {getProblemPoints(country).map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-600 text-sm"><span className="mt-1 shrink-0 text-base">{item.emoji}</span>{item.text}</li>
                   ))}
                   {[

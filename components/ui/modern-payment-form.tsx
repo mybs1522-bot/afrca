@@ -79,7 +79,7 @@ function SelarButton({ email }: { email: string }) {
       className="w-full py-3.5 bg-green-600 hover:bg-green-700 rounded-xl flex items-center justify-center gap-2.5 transition-all"
     >
       <span className="text-white text-lg">🇳🇬</span>
-      <span className="text-white font-bold text-base">Pay with Bank Transfer / Naira</span>
+      <span className="text-white font-bold text-base">Pay with Bank Transfer / Local Currency</span>
     </button>
   );
 }

@@ -11,26 +11,28 @@ export function getJoiners(c: CountryConfig) {
   return c.cities.map((p, i) => ({ name: p.name, city: p.city, time: TIMES[i % TIMES.length] }));
 }
 
-export const PROBLEM_POINTS = [
-  { emoji: "💸", text: "Stuck in the 'Cheap Designer' trap? Charging peanuts for designs and losing clients because you cannot show the high-end photorealistic renders that wealthy clients pay millions for?" },
-  { emoji: "📉", text: "Watching the Naira crash while your salary stays flat? Knowing you desperately need to land premium Lekki, Abuja, or remote USD clients to survive, but lacking the portfolio to prove your worth?" },
-  { emoji: "💻", text: "Wasting gigabytes of expensive data watching scattered, incomplete YouTube videos that leave you frustrated and unable to complete a real design from start to finish?" }
-];
+export function getProblemPoints(c: CountryConfig) {
+  return [
+    { emoji: "💸", text: "Stuck in the 'Cheap Designer' trap? Charging peanuts for designs and losing clients because you cannot show the high-end photorealistic renders that wealthy clients pay millions for?" },
+    { emoji: "📉", text: `${c.heroCurrencyHook} while your salary stays flat? Knowing you desperately need to land premium ${c.premiumAreas} or remote USD clients to survive, but lacking the portfolio to prove your worth?` },
+    { emoji: "💻", text: "Wasting gigabytes of expensive data watching scattered, incomplete YouTube videos that leave you frustrated and unable to complete a real design from start to finish?" }
+  ];
+}
 
 export function getTransformationStories(c: CountryConfig) {
   return [
     { 
-      name: "Funke B.", 
-      role: `Freelance Designer, Lagos`, 
-      before: `Was stuck charging ₦20k-₦30k per project. Wasted months on YouTube tutorials that left her confused. Her models looked amateur, V-Ray kept crashing, and clients would look at her basic drawings and price her down.`, 
-      after: `Mastered the AutoCAD → SketchUp → D5 Render AI pipeline in 15 days. She now confidently quotes ₦250k+ per room. Wealthy Lekki clients pay her upfront deposits without a single argument because her renders look like real photographs.`, 
+      name: c.cities[3]?.name || 'Funke B.', 
+      role: `Freelance Designer, ${c.cities[0]?.city || c.name}`, 
+      before: `Was stuck charging low fees per project. Wasted months on YouTube tutorials that left her confused. Her models looked amateur, V-Ray kept crashing, and clients would look at her basic drawings and price her down.`, 
+      after: `Mastered the AutoCAD → SketchUp → D5 Render AI pipeline in 15 days. She now confidently quotes ${c.renderCharge} per room. Wealthy ${c.premiumRentArea} clients pay her upfront deposits without a single argument because her renders look like real photographs.`, 
       emoji: "💰" 
     },
     { 
-      name: "Obinna C.", 
-      role: `Architecture Graduate, Abuja`, 
-      before: "Spent 5 years in university only to be taught outdated hand-drafting. Had zero professional rendering portfolio to show architecture firms in Abuja, looking at a starting salary of just ₦50k/month.", 
-      after: `Followed our exact 15-day roadmap. He built a stunning, high-end residential 3D portfolio. Landed a design role at an Abuja studio paying ₦350k/month before his final exams, plus runs a freelance studio on the side.`, 
+      name: c.cities[8]?.name || 'Obinna C.', 
+      role: `Architecture Graduate, ${c.cities[1]?.city || c.name}`, 
+      before: `Spent 5 years in university only to be taught outdated hand-drafting. Had zero professional rendering portfolio to show architecture firms, looking at a low starting salary.`, 
+      after: `Followed our exact 15-day roadmap. Built a stunning, high-end residential 3D portfolio. Landed a design role at a top studio before final exams, plus runs a freelance studio on the side.`, 
       emoji: "🎓" 
     }
   ];
@@ -50,12 +52,14 @@ export const PAGE_PREVIEWS_ROW2 = [
   '/renders/RENDER-23.jpg', '/renders/RENDER-24.jpg', '/renders/RENDER-25.jpg',
 ];
 
-export const FEAR_STATS = [
-  { stat: '₦150k+', label: 'Average amount real estate developers in Lagos & Abuja pay for a single interior view. Render skills = instant cash flow.', icon: '📈' },
-  { stat: '100x', label: 'Minimum ROI. Pay a tiny one-time fee of ₦15,000 today, and receive ₦200,000 in guaranteed freelance projects.', icon: '💸' },
-  { stat: '24/7', label: 'Team support on WhatsApp. Stuck on a render, texture, or model crash? Our mentors fix it with you in real-time.', icon: '🤝' },
-  { stat: '15 Days', label: 'From opening AutoCAD for the first time to exporting magazine-quality 3D renders that close clients.', icon: '⏳' },
-];
+export function getFearStats(c: CountryConfig) {
+  return [
+    { stat: c.heroRenderFee, label: `Average amount real estate developers in ${c.premiumAreas} pay for a single interior view. Render skills = instant cash flow.`, icon: '📈' },
+    { stat: '100x', label: `Minimum ROI. Pay a tiny one-time fee of ${c.formattedPrice} today, and receive ${c.freelanceTotal} in guaranteed freelance projects.`, icon: '💸' },
+    { stat: '24/7', label: 'Team support on WhatsApp. Stuck on a render, texture, or model crash? Our mentors fix it with you in real-time.', icon: '🤝' },
+    { stat: '15 Days', label: 'From opening AutoCAD for the first time to exporting magazine-quality 3D renders that close clients.', icon: '⏳' },
+  ];
+}
 
 /* ─── LOGO ─── */
 export const Logo = () => (
@@ -162,7 +166,7 @@ export function getTestimonialsLanding(c: CountryConfig) {
       name: c.cities[4]?.name || 'Tunde K.', 
       role: 'Senior Architect', 
       location: `${c.cities[4]?.city || c.cities[0]?.city}, ${c.name}`, 
-      content: `Our firm was losing Lekki developers to foreign agencies because of visual quality. We trained our staff using this AutoCAD to D5 Render pipeline. Best ₦15,000 we ever spent — we recently signed a ₦4.2 Million interior/exterior contract.` 
+      content: `Our firm was losing ${c.premiumRentArea} developers to foreign agencies because of visual quality. We trained our staff using this AutoCAD to D5 Render pipeline. Best ${c.formattedPrice} we ever spent — we recently signed a major interior/exterior contract.` 
     },
     { 
       name: c.cities[5]?.name || 'Ngozi I.', 
@@ -174,7 +178,7 @@ export function getTestimonialsLanding(c: CountryConfig) {
       name: c.cities[8]?.name || 'Obinna C.', 
       role: 'Architecture Student', 
       location: `${c.cities[8]?.city || c.cities[0]?.city}, ${c.name}`, 
-      content: 'University taught us theory, not practical business skills. Within 2 weeks of studying this, I started bidding for freelance gigs in Abuja. Now I make more money freelancing in a week than local firms pay junior architects in a month.' 
+      content: `University taught us theory, not practical business skills. Within 2 weeks of studying this, I started bidding for freelance gigs in ${c.cities[1]?.city || c.name}. Now I make more money freelancing in a week than local firms pay junior architects in a month.` 
     },
     { 
       name: c.cities[1]?.name || 'Adaeze N.', 
@@ -198,7 +202,7 @@ export function getTestimonialsLanding(c: CountryConfig) {
       name: c.cities[6]?.name || 'Yusuf M.', 
       role: 'Freelance Visualizer', 
       location: `${c.cities[6]?.city}, ${c.name}`, 
-      content: 'I almost quit 3D because physical institutes in Abuja charge ₦250k and teach nothing. This ₦15,000 package taught me how to generate photorealistic finishes, and the community keeps me motivated.' 
+      content: `I almost quit 3D because physical institutes charge ${c.expensiveCourses} and teach nothing. This ${c.formattedPrice} package taught me how to generate photorealistic finishes, and the community keeps me motivated.` 
     },
     { 
       name: c.cities[7]?.name || 'Blessing E.', 
@@ -210,7 +214,7 @@ export function getTestimonialsLanding(c: CountryConfig) {
       name: c.cities[9]?.name || 'Amina D.', 
       role: 'Architect', 
       location: `${c.cities[9]?.city || c.cities[1]?.city}, ${c.name}`, 
-      content: `If you want to earn premium design fees in Nigeria, you MUST know how to model in SketchUp and render in V-Ray/D5. Don\'t depend on your college degree — learn these practical tools. It is the cheapest career-hack.` 
+      content: `If you want to earn premium design fees in ${c.name}, you MUST know how to model in SketchUp and render in V-Ray/D5. Don\'t depend on your college degree — learn these practical tools. It is the cheapest career-hack.` 
     },
   ];
 }
@@ -220,7 +224,7 @@ export function getFaqItemsLanding(c: CountryConfig) {
   return [
     { question: `What exactly do I get for ${p}?`, answer: `You get 4 complete professional courses: AutoCAD (2D blueprints), SketchUp Pro (3D structure modeling), V-Ray (photorealistic lighting and textures), and D5 Render AI (cinematic walkthroughs). Plus you get ${c.freelanceTotal} worth of guaranteed freelance projects to recover your cost, 12,000+ textures/furniture libraries, software links, verifiable diploma, and 24/7 WhatsApp expert support. One-time payment for lifetime access.` },
     { question: "Can I do this if I don't have a design background?", answer: "Yes, 80% of our students started with zero knowledge. We teach you from 'how to open the software' to drawing floor plans, extruding 3D walls, adding lighting, and creating the final photorealistic render step-by-step." },
-    { question: `Why is this only ${p}? Is there a hidden catch?`, answer: `No catch. We are tired of 'fake gurus' charging ₦200,000+ for outdated lectures. We priced this at a flat ₦15,000 so every ambitious Nigerian architect, student, and freelancer can afford to master these high-income skills without breaking the bank.` },
+    { question: `Why is this only ${p}? Is there a hidden catch?`, answer: `No catch. We are tired of 'fake gurus' charging ${c.expensiveCourses} for outdated lectures. We priced this at a flat ${p} so every ambitious ${c.name.split(' ')[0]} architect, student, and freelancer can afford to master these high-income skills without breaking the bank.` },
     { question: "What computer specs do I need? Do I need expensive software?", answer: "Any decent laptop or PC runs these tools. We provide step-by-step installation guides and access to free/student versions of AutoCAD, SketchUp, V-Ray, and D5 Render, so you do not need to buy expensive software licenses." },
     { question: "How do the guaranteed freelance projects work?", answer: `To make sure you get immediate ROI, we provide real client briefs. Once you complete the assignments matching the standards taught in the course, we pay you directly (up to a total of ${c.freelanceTotal}) to add these to your portfolio and build your business confidence.` },
     { question: "Is there a refund if I don't like it?", answer: `Yes, we offer a 100% money-back guarantee within 7 days. If you're not satisfied, send us a message on WhatsApp and we will refund your ${p} immediately. Zero risk, zero questions asked.` }
