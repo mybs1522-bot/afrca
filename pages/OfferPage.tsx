@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { chargeSavedCardUpsell } from "../services/stripe";
 import { sendStageEmail } from "../services/email";
 import FunnelProgressBar from "../components/FunnelProgressBar";
+import { trackViewContent, trackPurchase, trackAddToCart } from "../lib/pixel";
 
 const OfferPage: React.FC = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const OfferPage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if ((window as any).fbq) (window as any).fbq("track", "ViewContent", { content_name: "Avada Books Upsell", value: UPSELL2_PRICE, currency: "USD" });
+    trackViewContent({ content_name: "Avada Books Upsell", value: UPSELL2_PRICE, currency: "USD" });
   }, []);
 
   // 15-minute countdown timer (resets on page load)
@@ -47,7 +48,7 @@ const OfferPage: React.FC = () => {
   const f = (v: number) => v.toString().padStart(2, "0");
 
   const handleSuccess = (productMode: 'books' | 'downsell') => {
-    if ((window as any).fbq) (window as any).fbq("track", "Purchase", { value: productMode === 'downsell' ? DOWNSELL_BOOKS_PRICE : UPSELL2_PRICE, currency: "USD" });
+    trackPurchase({ value: productMode === 'downsell' ? DOWNSELL_BOOKS_PRICE : UPSELL2_PRICE, currency: "USD" });
     sendStageEmail(email, productMode);
     setPaymentSuccess(true);
   };

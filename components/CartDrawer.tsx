@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Trash2, ShoppingBag, ArrowRight, Sparkles, Check, Mail, Phone, Timer, Lock } from 'lucide-react';
 import { Course } from '../types';
 import { COURSES, BUNDLE_PRICE } from '../constants';
+import { trackInitiateCheckout, trackAddToCart } from '../lib/pixel';
 
 interface CartDrawerProps {
     isOpen: boolean;
@@ -38,6 +39,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     const validateEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
     const formatTime = (val: number) => val.toString().padStart(2, '0');
 
+    const handleAddAll = () => {
+        trackAddToCart({
+            content_name: 'All 12 Courses Bundle',
+            value: BUNDLE_PRICE,
+            currency: 'INR',
+            num_items: COURSES.length
+        });
+        onAddAll();
+    };
+
     const handleCheckoutClick = () => {
         let hasError = false;
         if (!phone || phone.length < 10) {
@@ -53,6 +64,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             setEmailError(false);
         }
         if (hasError) return;
+        trackInitiateCheckout({
+            value: finalTotal,
+            currency: 'INR',
+            num_items: cartIds.size
+        });
         onCheckout(phone, email);
     };
 
@@ -142,7 +158,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                     Save ₹{(COURSES.length * 199 - BUNDLE_PRICE).toLocaleString()} vs buying individually
                                 </div>
                                 <button
-                                    onClick={onAddAll}
+                                    onClick={handleAddAll}
                                     className="w-full py-2 bg-brand-primary hover:bg-blue-700 text-white font-bold rounded-lg text-sm flex items-center justify-center gap-2 transition-colors shadow-glow"
                                 >
                                     <Sparkles size={12} />

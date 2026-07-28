@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { chargeSavedCardUpsell } from "../services/stripe";
 import { sendStageEmail } from "../services/email";
 import FunnelProgressBar from "../components/FunnelProgressBar";
+import { trackViewContent, trackPurchase } from "../lib/pixel";
 
 const RenderUpsellPage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const RenderUpsellPage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if ((window as any).fbq) (window as any).fbq("track", "ViewContent", { content_name: "Render Upsell", value: FRONT_END_PRICE, currency: "USD" });
+    trackViewContent({ content_name: "Render Upsell", value: FRONT_END_PRICE, currency: "USD" });
   }, []);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ const RenderUpsellPage: React.FC = () => {
   const f = (v: number) => v.toString().padStart(2, "0");
 
   const handleSuccess = (newCustomerId?: string, newPaymentMethodId?: string) => {
-    if ((window as any).fbq) (window as any).fbq("track", "Purchase", { value: FRONT_END_PRICE, currency: "USD" });
+    trackPurchase({ value: FRONT_END_PRICE, currency: "USD" });
     sendStageEmail(email, 'render');
     navigate("/onetime", { state: { customerId: newCustomerId ?? customerId, paymentMethodId: newPaymentMethodId ?? paymentMethodId, email } });
   };

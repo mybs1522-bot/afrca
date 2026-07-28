@@ -5,6 +5,7 @@ import { FRONT_END_COURSES, FRONT_END_PRICE, FRONT_END_ORIGINAL_PRICE } from '..
 import TeamSection from '../components/ui/team';
 import { useCountry } from '../lib/CountryContext';
 import { getDiscountPercent } from '../lib/countryConfig';
+import { trackViewContent, trackInitiateCheckout } from '../lib/pixel';
 import {
   SocialProofToast,
   getProblemPoints, getTransformationStories, getFearStats,
@@ -82,12 +83,16 @@ const LandingPage: React.FC = () => {
   const TRANSFORMATION_STORIES = getTransformationStories(country);
   const VALUE_STACK_ITEMS = getValueStackItems(country);
   const TESTIMONIALS_LANDING = getTestimonialsLanding(country);
+
   const FAQ_ITEMS_LANDING = getFaqItemsLanding(country);
   const INCOME_TIERS = getIncomeTiers(country);
 
   const [timeLeft, setTimeLeft] = useState(() => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, r = D - (Date.now() % D); return { h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }; });
   const [showStickyBar, setShowStickyBar] = useState(false);
-  useEffect(() => { window.scrollTo(0, 0); if ((window as any).fbq) (window as any).fbq('track', 'ViewContent', { content_name: 'Avada Design — SketchUp + V-Ray + D5 Render AI', value: country.price, currency: country.currencyCode }); }, [country]);
+  useEffect(() => { 
+    window.scrollTo(0, 0); 
+    trackViewContent({ content_name: 'Avada Design — SketchUp + V-Ray + D5 Render AI', value: country.price, currency: country.currencyCode }); 
+  }, [country]);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [studentCount, setStudentCount] = useState(22390);
 
@@ -108,7 +113,7 @@ const LandingPage: React.FC = () => {
   const formatTime = (val: number) => val.toString().padStart(2, '0');
 
   const openPaymentModal = () => {
-    if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
+    trackInitiateCheckout({ content_name: 'Avada Design Bundle', value: country.price, currency: country.currencyCode });
     navigate('/checkout');
   };
 

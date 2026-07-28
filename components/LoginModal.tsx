@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Mail, Lock, ArrowRight, Github, Chrome } from 'lucide-react';
+import { trackCompleteRegistration, trackLead } from '../lib/pixel';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -8,6 +9,20 @@ interface LoginModalProps {
 
 export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
+
+  const handleSignIn = () => {
+    trackCompleteRegistration({ status: 'completed' });
+    onClose();
+  };
+
+  const handleOAuth = (provider: string) => {
+    trackCompleteRegistration({ status: provider });
+    onClose();
+  };
+
+  const handleCreateOne = () => {
+    trackLead({ content_name: 'Registration Interest' });
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -59,7 +74,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                     <a href="#" className="text-brand-primary font-bold hover:underline">Forgot Password?</a>
                 </div>
 
-                <button className="w-full py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-black transition-all flex items-center justify-center gap-2 group mt-2">
+                <button onClick={handleSignIn} className="w-full py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-black transition-all flex items-center justify-center gap-2 group mt-2">
                     Sign In <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
@@ -74,16 +89,16 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-                <button className="flex items-center justify-center gap-2 py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm font-bold text-gray-700">
+                <button onClick={() => handleOAuth('google')} className="flex items-center justify-center gap-2 py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm font-bold text-gray-700">
                      <Chrome size={18} /> Google
                 </button>
-                <button className="flex items-center justify-center gap-2 py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm font-bold text-gray-700">
+                <button onClick={() => handleOAuth('github')} className="flex items-center justify-center gap-2 py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm font-bold text-gray-700">
                      <Github size={18} /> GitHub
                 </button>
             </div>
 
              <div className="mt-6 text-center text-xs text-gray-500">
-                Don't have an account? <span className="text-brand-primary font-bold cursor-pointer hover:underline">Create one</span>
+                Don't have an account? <span onClick={handleCreateOne} className="text-brand-primary font-bold cursor-pointer hover:underline">Create one</span>
              </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { sendStageEmail } from "../services/email";
 import { useCountry } from '../lib/CountryContext';
 import { getDiscountPercent } from '../lib/countryConfig';
+import { trackViewContent, trackPurchase, trackAddPaymentInfo, trackInitiateCheckout } from '../lib/pixel';
 
 const CheckoutPage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const CheckoutPage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if ((window as any).fbq) (window as any).fbq("track", "ViewContent", { content_name: "Avada Checkout", value: country.price, currency: country.currencyCode });
+    trackViewContent({ content_name: "Avada Checkout", value: country.price, currency: country.currencyCode });
   }, []);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const CheckoutPage: React.FC = () => {
 
   const handleSuccess = (customerId?: string, paymentMethodId?: string, paymentIntentId?: string) => {
     console.log('[CheckoutPage] Payment succeeded. customerId:', customerId, 'paymentMethodId:', paymentMethodId, 'paymentIntentId:', paymentIntentId);
-    if ((window as any).fbq) (window as any).fbq("track", "Purchase", { value: country.price, currency: country.currencyCode });
+    trackPurchase({ value: country.price, currency: country.currencyCode });
     sendStageEmail(email, 'render');
     navigate("/onetime", { state: { customerId, paymentMethodId, paymentIntentId, email } });
   };
@@ -142,6 +143,8 @@ const CheckoutPage: React.FC = () => {
               setNameError(!nameValid);
               setEmailError(!emailValid);
               if (!nameValid || !emailValid) return;
+              trackAddPaymentInfo({ value: country.price, currency: country.currencyCode });
+              trackInitiateCheckout({ value: country.price, currency: country.currencyCode });
               sessionStorage.setItem('checkout_fullname', fullName.trim());
               sessionStorage.setItem('checkout_email', email);
               const redirectUrl = `${window.location.origin}/onetime`;

@@ -6,6 +6,7 @@ import { sendStageEmail } from "../services/email";
 import FunnelProgressBar from "../components/FunnelProgressBar";
 import { useCountry } from '../lib/CountryContext';
 import { getUpsellDiscountPercent } from '../lib/countryConfig';
+import { trackViewContent, trackPurchase } from '../lib/pixel';
 
 const OnetimePage: React.FC = () => {
   const navigate = useNavigate();
@@ -32,10 +33,10 @@ const OnetimePage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if ((window as any).fbq) (window as any).fbq("track", "ViewContent", { content_name: "Avada Upsell", value: country.upsellPrice, currency: country.currencyCode });
+    trackViewContent({ content_name: "Avada Upsell", value: country.upsellPrice, currency: country.currencyCode });
     // If arriving from crypto payment, fire purchase event
     if (isCryptoSuccess && emailFromState) {
-      if ((window as any).fbq) (window as any).fbq("track", "Purchase", { value: country.upsellPrice, currency: country.currencyCode });
+      trackPurchase({ value: country.upsellPrice, currency: country.currencyCode });
       sendStageEmail(emailFromState, 'render');
     }
   }, []);
@@ -60,7 +61,7 @@ const OnetimePage: React.FC = () => {
   const f = (v: number) => v.toString().padStart(2, "0");
 
   const handleSuccess = (newCustomerId?: string, newPaymentMethodId?: string) => {
-    if ((window as any).fbq) (window as any).fbq("track", "Purchase", { value: country.upsellPrice, currency: country.currencyCode });
+    trackPurchase({ value: country.upsellPrice, currency: country.currencyCode });
     sendStageEmail(email, 'full');
     navigate("/offer", { state: { customerId: newCustomerId ?? customerId, paymentMethodId: newPaymentMethodId ?? paymentMethodId, paymentIntentId, email } });
   };
